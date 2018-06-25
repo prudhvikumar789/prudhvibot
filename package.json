@@ -1,0 +1,21 @@
+{
+  "name": "good",
+  "version": "1.0.0",
+  "description": "Facebook bot using api.ai",
+  "main": "webhook.js",
+  "scripts": {
+    "start": "nf start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "good"
+  ],
+  "author": "Prudhvikumar MADITHATI",
+  "license": "MIT",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  }
+}
