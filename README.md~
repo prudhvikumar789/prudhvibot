@@ -1,6 +1,5 @@
 # prudhvibot
 
-#URL : https://tutorials.botsfloor.com/creating-a-simple-facebook-messenger-ai-bot-with-api-ai-in-node-js-50ae2fa5c80d
 
 		========================================START BUILDING A SIMPLE CHATBOT===========================================
 
@@ -9,12 +8,12 @@
 
 	command: ngrok http 8080
 
-3. When you have exposed some port then you will able to access that port from the URL similar to below one.
+3. When we have exposed some port then we will able to access that port from the URL similar to below one.
 
 		https://47ba4dd4.ngrok.io
 
 4. Install Node.js [Latest Version if possible].
-5. Create your app directory and set up your 'Chatbot' app.
+5. Create our app directory and set up our 'Chatbot' app.
 
 		$ mkdir prudhvibot/
 
@@ -22,11 +21,11 @@
 
 		$ npm init
 
-7. Once you configure your app, install 'Express' and 'body-parser'.
+7. Once we configure our app, install 'Express' and 'body-parser'.
 
 		$ npm install express body-parser --save
 
-8. Create a 'webhook.js', and instantiate express and listen the server to port 8080, or whatever the port you have set with 'ngrok'.
+8. Create a 'webhook.js', and instantiate express and listen the server to port 8080, or whatever the port we have set with 'ngrok'.
 
 	const express = require('express');
 	const bodyParser = require('body-parser');
@@ -64,9 +63,9 @@
   	  }
 	});
 
-10. This is how you receive messages to your webhook via Facebook Messenger- All requests should come via post, while the GET route is only used at the time you configure your Facebook app.
+10. This is how we receive messages to our webhook via Facebook Messenger- All requests should come via post, while the GET route is only used at the time we configure our Facebook app.
 
-	Where you see the tuxedo_cat, just use an arbitrary string. You will need later when setting up your Facebook app.
+	Where we see the tuxedo_cat, just use an arbitrary string. we will need later when setting up our Facebook app.
 
 11. Run the code, and go to the next step.
 
@@ -74,7 +73,7 @@
 
 				=============================SETTING FACEBOOK PAGE APP================================
 
-12. You need a Facebook Page to set up your chat bot. Create one from
+12. we need a Facebook Page to set up our chat bot. Create one from
 
 		https://www.facebook.com/pages/create
 
@@ -84,22 +83,22 @@
 	
 		https://www.facebook.com/quickstarts
 
-14. Once your app is created, follow the steps to configure or skip it to your Dashboard.
+14. Once our app is created, follow the steps to configure or skip it to our Dashboard.
 
 15. Go to Add Product from the left menu, then choose Messenger. Click Get Started.
 
-16. At the Token Generation, (1) choose the page you just created from the dropdown menu, and it will generate a token (2) that you will need 	  to include in your node code.
+16. At the Token Generation, (1) choose the page we just created from the dropdown menu, and it will generate a token (2) that we will need 	  to include in our node code.
     Then, at the Webhooks, (3) click the Setup Webhooks button:
 
-17. In the dialog, fill out the (1) Callback URL with your ngrok URL, (2) the random string for validation (the one you’ve specified in your 	 ‘GET’ route in the webhook.js), then (3) check messages.
+17. In the dialog, fill out the (1) Callback URL with our ngrok URL, (2) the random string for validation (the one we’ve specified in our 	 ‘GET’ route in the webhook.js), then (3) check messages.
 
-18. Click the Verify and Save. If you get a red icon with x at the Callback URL, it means the URL is not validated- either the URL is wrong  	 or your node code is not properly running. Otherwise, you are ready to get back to code.
+18. Click the Verify and Save. If we get a red icon with x at the Callback URL, it means the URL is not validated- either the URL is wrong  	 or our node code is not properly running. Otherwise, we are ready to get back to code.
 
 19. Writing a Super Simple Chat Bot.
 
 		$ npm install request --save
 
-20. Continue with your webhook.js, let’s implement sendMessage() that simply replies the sender an echo to just test your Messenger bot.
+20. Continue with our webhook.js, let’s implement sendMessage() that simply replies the sender an echo to just test our Messenger bot.
 
 	const request = require('request');
 
@@ -124,40 +123,40 @@
 	  });
 	}
 
-21. Where you see the PAGE_ACCESS_TOKEN, use the generated token.Try running the code. This acts as a very simple bot, which interact the    	 Messenger platform to receive a message and echo the message as the reply- Go to https://m.me/YOUR-PAGE-HASH and start a conversation. If 	  your the simple bot works correctly, it just replies the exactly what you send.
+21. Where we see the PAGE_ACCESS_TOKEN, use the generated token.Try running the code. This acts as a very simple bot, which interact the    	 Messenger platform to receive a message and echo the message as the reply- Go to https://m.me/our-PAGE-HASH and start a conversation. If 	  our the simple bot works correctly, it just replies the exactly what we send.
 
-22. Now, Your entry will be simply echoed back. And let’s use API.ai next to make this conversation more interesting.
+22. Now, our entry will be simply echoed back. And let’s use API.ai next to make this conversation more interesting.
 
-23. Using API.ai with Your Facebook Messenger Bot:
-	API.ai allows developers to integrate your app with the AI system with speech-to-text and natural language processing.
+23. Using API.ai with our Facebook Messenger Bot:
+	API.ai allows developers to integrate our app with the AI system with speech-to-text and natural language processing.
 	Let’s get started with API.ai by signing up.
-	Once you get your account, create an agent. You can either click the button that says CREATE AGENT or from the menu.
+	Once we get our account, create an agent. we can either click the button that says CREATE AGENT or from the menu.
 
 24. Give it a name and fill out the required info.
-    Make sure to click the Save button on the top every time you make changes.
+    Make sure to click the Save button on the top every time we make changes.
 
-			================================Making “Small Talk” with your Messenger Bot==========================
+			================================Making “Small Talk” with our Messenger Bot==========================
 
-25. Instead of having your bot just echo you, let’s give it the API.ai’s Small Talk feature. This gives your bot an ability to have simple    	   conversations. From the left menu (if the menu is not visible, click the “Settings menu icon” at the top left to open), click Domains,  	  then activate the Small Talk.
+25. Instead of having our bot just echo we, let’s give it the API.ai’s Small Talk feature. This gives our bot an ability to have simple    	   conversations. From the left menu (if the menu is not visible, click the “Settings menu icon” at the top left to open), click Domains,  	  then activate the Small Talk.
 
-26. Once activated, click View details then turn on the Fulfillment so that you can later use this feature in your app and customize.
+26. Once activated, click View details then turn on the Fulfillment so that we can later use this feature in our app and customize.
 
-			===============================use this feature in your bot==================================
+			===============================use this feature in our bot==================================
 Using API.ai Node Library.
 
-27. It is actually possible to integrate API.ai with FB Messenger without programming, however, to make it fully customize in the way you want 	   to interact with your FB app, let’s use the service programmatically.
+27. It is actually possible to integrate API.ai with FB Messenger without programming, however, to make it fully customize in the way we want 	   to interact with our FB app, let’s use the service programmatically.
     First, install API.ai node.js library:
 		
 		$ npm install apiai
 
-28. You need your API.ai API key and API secret to use the service with your bot. From the menu, click the “Config” icon to get your API key  	  (“Client access token”):
+28. we need our API.ai API key and API secret to use the service with our bot. From the menu, click the “Config” icon to get our API key  	  (“Client access token”):
 
 		Client Access Token : 713606e84c0544d0a73a0e14fff98ea2
-29. And go back to your webhook.js and initialize apiai with the API key.
+29. And go back to our webhook.js and initialize apiai with the API key.
 
 		const apiaiApp = require('apiai')(CLIENT_ACCESS_TOKEN);
 
-30. you just passed a text to API.ai, and do something when you get the response (the response event).
+30. we just passed a text to API.ai, and do something when we get the response (the response event).
 
 31. Now, let’s modify the sendMessage().
 
@@ -182,7 +181,7 @@ Using API.ai Node Library.
 
 32. What the code sample above doing is basically getting the info (passed as a param) sent from a user via Messenger, and pass the text     	 content to API.ai. Once the API.ai returns the answer, the response event is triggered.
 
-33. Where you see the
+33. Where we see the
 		// Got a response…
     comment in the code sample above, let’s POST the response to the Messenger API.
 
@@ -207,6 +206,6 @@ Using API.ai Node Library.
 	    });
 	 });
 
-34. Now, let’s test our bot. Run the node code, and try sending some messages. If everything is working, you should get replies from the bot.
+34. Now, let’s test our bot. Run the node code, and try sending some messages. If everything is working, we should get replies from the bot.
 
 		=====================================================END===================================================

@@ -1,6 +1,5 @@
 # prudhvibot
 
-#URL : https://tutorials.botsfloor.com/creating-a-simple-facebook-messenger-ai-bot-with-api-ai-in-node-js-50ae2fa5c80d
 
 		========================================START BUILDING A SIMPLE CHATBOT===========================================
 
