@@ -6,7 +6,7 @@
 1. Install Ngrok.
 2. Expose a port [eg:8080/8090....]
 
-	command: ngrok http 8080
+	$ command: ngrok http 8080
 
 3. When we have exposed some port then we will able to access that port from the URL similar to below one.
 
